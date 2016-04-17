@@ -1,4 +1,4 @@
-from django.shortcuts import render, render_to_response, get_object_or_404
+from django.shortcuts import render_to_response, get_object_or_404
 from posts.models import BlogCategories, BlogPost, TypeOfEntry
 
 
@@ -12,7 +12,7 @@ def index(request):
 
 def view_post(request, slug):
 	return render_to_response('view_post.html', {
-		'post': get_object_or_404(Blog, slug=slug)
+		'post': get_object_or_404(BlogPost, slug=slug)
 		})
 
 def view_category(request, slug):

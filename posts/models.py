@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.db.models import permalink
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class BlogCategories(models.Model):
@@ -13,7 +14,7 @@ class BlogCategories(models.Model):
 
 	@permalink
 	def get_absolute_url(self):
-		return ('view_blog_category', None, {'slug': slef.slug})
+		return ('view_blog_category', None, {'slug': self.slug})
 
 class TypeOfEntry(models.Model):
 	type_of = models.CharField(max_length=60, unique=True)
@@ -30,7 +31,7 @@ class BlogPost(models.Model):
 	title = models.CharField(max_length=160)
 	slug = models.SlugField(max_length=160)
 	category = models.ForeignKey('posts.BlogCategories')
-	body = models.TextField()
+	body = RichTextField()
 	posted = models.DateField(db_index=True, auto_now_add=True)
 	type_of = models.ForeignKey('posts.TypeOfEntry')
 

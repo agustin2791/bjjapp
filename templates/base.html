@@ -5,12 +5,44 @@
 	{% load staticfiles %}
 	<link rel="stylesheet" type="text/css" href="{% static "bower_components/bootstrap/dist/css/bootstrap.min.css" %}">
 	<link rel="stylesheet" type="text/css" href="{% static "bower_components/bootstrap/dist/css/bootstrap-theme.min.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/alignment.css" %}">
 </head>
 <body>
-
-	<h1>{% block title %}Welcome to my Block{% endblock %}</h1>
-	{% block content %}
-	{% endblock %}
+	<header>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navigation" aria-expanded="false">
+						<span class="sr-only">Toggle Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="#" class="navbar-brand">Half Guard</a>
+				</div>
+				<div class="collapse navbar-collapse" id="main-navigation">
+					<ul class="nav navbar-nav">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Academies</a></li>
+						<li><a href="#">Tournaments</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-10 col-lg-10">
+				{% block content %}
+				{% endblock %}
+			</div>
+			<div class="col-sm-12 col-md-2 col-lg-2">
+				<h3>Ad Space and other stuff!!</h3>
+			</div>
+		</div>
+	</div>
 
 <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
 <script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>

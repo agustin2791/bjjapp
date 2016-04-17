@@ -20,9 +20,10 @@ from django.conf.urls.static import static
 from posts import views
 
 urlpatterns = [
-	url(r'^', views.index, name='index'),
     url(r'^admin/', admin.site.urls),
-    url(r'^post/view/(?P<slug>[^\.]+).html', views.view_post, name='view_post'),
-    url(r'^post/categories/(?P<slug>[^\.]+).html', views.view_category, name='view_category'),
-    url(r'^post/subject/(?P<slug>[^\.]+).html', views.view_type, name='view_type'),
+	url(r'^$', views.index, name='index'),
+    url(r'^post/view/(?P<slug>[^\.]+).html$', views.view_post, name='view_blog_post'),
+    url(r'^post/categories/(?P<slug>[^\.]+).html$', views.view_category, name='view_category'),
+    url(r'^post/subject/(?P<slug>[^\.]+).html$', views.view_type, name='view_type'),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

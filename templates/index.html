@@ -1,4 +1,24 @@
 {% extends 'base.html' %}
 {% block head_title %}Welcome{% endblock %}
 {% block title %}Welcome{% endblock %}
-{% block content %}Content Goes Here {% endblock %}
+{% block content %}
+<div class="row">
+	{% if type %}
+	{% for t in type %}
+		<div class="col-md-3">
+			
+			<h3>{{ t.type_of }}</h3>
+			
+		</div>
+	{% endfor %}
+	{% endif %}
+	{% if posts %}
+	{% for post in posts %}
+	<div class="col-md-3">
+		<h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+	</div>
+	{% endfor %}
+	{% endif %}
+</div>
+
+{% endblock %}
