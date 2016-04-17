@@ -1,0 +1,8 @@
+dj-database-url==0.4.1
+Django==1.9.4
+django-annoying==0.9.0
+importlib==1.0.3
+psycopg2==2.6.1
+pybbm==0.17.3
+Unidecode==0.4.19
+virtualenv==13.1.2

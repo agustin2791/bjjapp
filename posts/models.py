@@ -40,3 +40,19 @@ class BlogPost(models.Model):
 	@permalink
 	def get_absolute_url(self):
 		return ('view_blog_post', None, {'slug': self.slug})
+
+class BjjLocation(models.Model):
+	name = models.CharField(max_length=50)
+	slug = models.SlugField(max_length=50, unique=True)
+	address = models.CharField(max_length=150, unique=True)
+	city = models.CharField(max_length=50)
+	state = models.CharField(max_length=2)
+	zip_code = models.IntegerField(max_length=5)
+	phone_number = models.IntegerField(max_length=10)
+
+	def __unicode__(self):
+		return self.name
+
+	@permalink
+	def get_absolute_url(self):
+		return ('view_type_of_entry', None, {'slug': self.slug})

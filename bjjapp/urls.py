@@ -25,4 +25,6 @@ urlpatterns = [
     url(r'^post/view/(?P<slug>[^\.]+).html', views.view_post, name='view_post'),
     url(r'^post/categories/(?P<slug>[^\.]+).html', views.view_category, name='view_category'),
     url(r'^post/subject/(?P<slug>[^\.]+).html', views.view_type, name='view_type'),
+    url(r'^location.html', views.location, name='location'),
+    url(r'^location/(?P<slug>[^\.]+).html', views.locations, name='locations')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

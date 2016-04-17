@@ -1,5 +1,5 @@
 from django.shortcuts import render, render_to_response, get_object_or_404
-from posts.models import BlogCategories, BlogPost, TypeOfEntry
+from posts.models import BlogCategories, BlogPost, TypeOfEntry, BjjLocation
 
 
 # Create your views here.
@@ -32,3 +32,6 @@ def view_type(request, slug):
 		'post': BlogPost.objects.filter(category=category)[:5],
 		'type': TypeOfEntry.objects.filter(type_of=type_of)[:5]
 		})
+def location(request):
+	return render_to_response('location.html', {
+		'locations': BjjLocation.all()	})
