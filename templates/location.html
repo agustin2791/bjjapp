@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block head_title %}Half Guard | Locate a school{% endblock %}
+{% block title %}Search for a location{% endblock %}
+{% block content %}
+{% if locations %}
+<div class="row">
+	<div class="col-md-6">
+		<h3>California</h3>
+		{% if state.value == ca %}
+			{% for loc in locations %}
+			<ul>
+				<li><a href="{{ loc.get_absolute_url }}">{{loc.name}}</a><br>{{ loc.address }} {{ loc.city }}, {{ loc.state }} {{ loc.zip_code }}<br><b>{{ loc.instructor }}</b></li>
+			</ul>
+			{% endfor %}
+		{% endif %}
+	</div>
+</div>
+{% endif %}
+{% endblock %}

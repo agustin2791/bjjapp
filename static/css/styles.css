@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic);
+
+h1, h2, h3, h4, h5, h6, p, a {
+	font-family: 'Armino', sans-serif;
+	font-weight: 400;
+}
+p {
+	font-size: large;
+}
+
+header {
+	background: url(../images/header-bg-2.jpg);
+	background-size: 100%;
+	box-shadow: 3px 3px 18px #bdc3c7;
+}
+.logo-top {
+	width: 100%;
+	text-align: center;
+}
+.logo-top {
+	width: 100%;
+}
+/* Navigation */
+.navbar-default {
+	background: rgba(0, 0, 0, 0);
+	position: relative;
+	border-radius: 0px;
+	border-bottom: 2px solid #34495e;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	box-shadow: none;
+}
+.navbar-default ul.navbar-nav li a {
+	color: #fff;
+	font-size: large;
+	transition: all ease .5s;
+	border-bottom: solid 5px rgba(0, 0, 0, 0);
+	padding-bottom: 5px;
+}
+.navbar-default ul.navbar-nav li a:hover {
+	color: #e67e22;
+	border-bottom: solid 5px #e67e22;
+}
+.navbar-right {
+	color: #fff;
+}
+/* Index Cards */
+.card-title {
+	width: 100%;
+	padding: 2px;
+	margin: 0px;
+	color: #2980b9;
+	text-align: left;
+	border-bottom: 2px solid #2980b9;
+}
+.card-content {
+	padding: 2px;
+}
+.about-the-author {
+	background: #f1f1f1;
+	border-radius: 15px;
+}
+.about-the-author p {
+	font-size: small;
+}

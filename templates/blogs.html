@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block head_title %}Half Guard | Posts{% endblock %}
+{% block title %}View all posts{% endblock %}
+{% block content %}
+{% if posts %}
+<div class="row">
+{% for p in posts %}
+	<div class="col-md-4 blog-posts-blogs">
+		<h3><a href="{{ p.get_absolute_url }}">{{ p.title }}</a></h3>
+		<p><i>{{ p.posted }} by: {{ p.author }}</i></p>	
+	</div>
+{% endfor %}
+</div>
+{% endif %}
+{% endblock %}
